@@ -1,33 +1,5 @@
-#index_background_img {
-    width: 60%;
-}
-
-#page_header {
-    background-color: #F0F8FF;
-}
-
-#cars_container {
-    background-color: #B9D9EB;
-}
-
-.card {
-    size: 10rem;
-    align-self: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-align: center;
-}
-
-.card-title {
-    text-align: center;
-}
-
-.card-img {
-    width: 10rem;
-    height: 10rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+form .error {
+    font-size: small;
+    padding-top: 5px;
+    color: red;
 }
