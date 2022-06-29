@@ -19,7 +19,7 @@ $(document).ready(function () {
         submitHandler: function (form) {
             localStorage.setItem("name", $("#name").val());
             localStorage.setItem("password", $("#password").val());
-            localStorage.setItem("name", $("#email").val());
+            localStorage.setItem("email", $("#email").val());
             form.submit();
         }
     });

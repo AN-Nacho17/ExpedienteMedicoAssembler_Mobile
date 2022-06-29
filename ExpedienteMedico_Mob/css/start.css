@@ -1,32 +1,30 @@
 #index_background_img {
-    width: 60%;
+    size-adjust: 100%;
 }
 
 #page_header {
     background-color: #F0F8FF;
 }
 
-#cars_container {
+#cards_container {
     background-color: #B9D9EB;
 }
 
 .card {
-    size: 10rem;
     align-self: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 30px;
     text-align: center;
 }
 
 .card-title {
+    font-size: 30px;
     text-align: center;
+    font-weight: normal;
 }
 
 .card-img {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
