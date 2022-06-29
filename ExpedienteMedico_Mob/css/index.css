@@ -1,6 +1,13 @@
 #index_background_img {
-    width: 50%;
-    align-self: center;
+    width: 60%;
+}
+
+#page_header {
+    background-color: #F0F8FF;
+}
+
+#cars_container {
+    background-color: #B9D9EB;
 }
 
 .card {
