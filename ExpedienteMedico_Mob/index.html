@@ -17,12 +17,13 @@
 
     </div>
     <!-- to column centered div for login-->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-6 py-5">
                 <div class="card">
-                    <div class="card-header">
-                        <h3>Inicio de sesion</h3>
+                    <div class="card-title text-light py-3">
+                        <img src="/img/Person.svg" alt="Person">
+                        <h4 class="py-1">Inicio de sesion</h4>
                     </div>
                     <form id="login_form" action="html/Start.html">
                         <div class="card-body">
@@ -39,9 +40,8 @@
                                 <input type="password" class="form-control" id="password" name="password"
                                     placeholder="Contraseña">
                             </div>
-                            <div class="py-3"">
-                                <button class=" btn btn-primary" type="submit">Iniciar</button>
-                            </div>
+                            <br>
+                            <button id="submit_form" class="btn btn-primary" type="submit">Iniciar</button>
                         </div>
                     </form>
                 </div>

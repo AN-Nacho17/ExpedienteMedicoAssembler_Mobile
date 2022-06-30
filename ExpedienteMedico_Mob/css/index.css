@@ -1,3 +1,32 @@
+
+.card-title {
+    background-color: #B0C4DE;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.card-body {
+    background-color: #E1EBEE;
+    text-align: left;
+}
+
+#submit_form {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-weight: normal;
+    align-self: center;
+}
+
+#submit_form:hover {
+    transform: scale(1.1);
+    background-color: #48D1CC;
+    color: white;
+}
+
+
 form .error {
     font-size: small;
     padding-top: 5px;
