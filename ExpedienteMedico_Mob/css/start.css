@@ -24,7 +24,8 @@
 }
 
 .card {
-    margin: 30px;
+    margin-top: 2rem;
+    margin: 7px;
     border: #32CCBC solid 7px;
 }
 
@@ -36,8 +37,8 @@
 }
 
 .card-img {
-    width: 9rem;
-    height: 9rem;
+    width: 7rem;
+    height: 7rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
