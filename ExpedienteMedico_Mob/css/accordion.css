@@ -1,0 +1,19 @@
+.accordion-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.accordion-button:not(.collapsed) {
+    color: inherit;
+    background-color:#1E90FF;
+    color: white;
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0%) invert(100%);
+}
+
+.accordion-button:focus {
+    box-shadow: inherit;
+}

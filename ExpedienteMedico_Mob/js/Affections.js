@@ -1,8 +1,16 @@
-
 $(document).ready(function () {
     for (let i = 0; i < 3; i++) {
         $("#affections_container").append(getAffectionElement(i));
     }
+    //collapse all accordion items
+    $('.collapse').collapse('hide');
+    tinymce.init({
+        selector: 'textarea',
+        height: 300,
+        menubar: false,
+        toolbar: false,
+        readonly: true
+    });
 });
 
 const getAffectionElement = (i) => {
@@ -16,10 +24,16 @@ const getAffectionElement = (i) => {
 <div id="collapse${i}" class="accordion-collapse collapse show" aria-labelledby="heading${i}"
     data-bs-parent="#affections_container">
     <div class="accordion-body">
-        <strong>This is the ${i} accordion item.</strong>
+        <strong>Detalles del padecimiento.</strong>
     </div>
+    ${affectionDescription}
 </div>
 </div>`;
 }
 
-
+const affectionDescription =
+    `<div class="container py-2">
+        <div class="row">
+            <textarea class="py-2"></textarea>
+        </div>
+    </div >`;
