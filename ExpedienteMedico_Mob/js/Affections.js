@@ -4,13 +4,6 @@ $(document).ready(function () {
     }
     //collapse all accordion items
     $('.collapse').collapse('hide');
-    tinymce.init({
-        selector: 'textarea',
-        height: 300,
-        menubar: false,
-        toolbar: false,
-        readonly: true
-    });
 });
 
 const getAffectionElement = (i) => {
