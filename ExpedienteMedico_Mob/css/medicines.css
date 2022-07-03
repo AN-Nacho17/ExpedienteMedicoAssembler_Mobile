@@ -1,0 +1,20 @@
+.list-group-item {
+    margin: 20px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #F0F8FF;
+    border: none;
+}
+
+.list-group-item:hover {
+    background-color: #1E90FF;
+    color: #F0F8FF;
+}
+
+.list-group-item img {
+    margin: 1px;
+    width: 50px;
+    height: 40px;
+    vertical-align: middle;
+    float: right;
+}
