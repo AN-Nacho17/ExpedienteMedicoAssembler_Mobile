@@ -3,7 +3,6 @@ $(document).ready(function () {
         $("#treatment_container").append(getTreatmentElement(m));
     }
     //collapse all accordion items
-    $('.collapse').collapse('hide');
 });
 
 
@@ -11,7 +10,7 @@ const getTreatmentElement = (m) => {
     return `<div class="accordion-item">
 <h2 class="accordion-header" id=treatment-heading${m}>
     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-        data-bs-target="#treatment-collapse${m}" aria-expanded="true" aria-controls="treatment-collapse${m}">
+        data-bs-target="#treatment-collapse${m}" aria-expanded="false" aria-controls="treatment-collapse${m}">
        Tratamiento #${m}
     </button>
 </h2>

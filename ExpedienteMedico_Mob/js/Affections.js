@@ -2,8 +2,6 @@ $(document).ready(function () {
     for (let i = 0; i < 3; i++) {
         $("#affections_container").append(getAffectionElement(i));
     }
-    //collapse all accordion items
-    $('.collapse').collapse('hide');
 });
 
 
@@ -11,7 +9,7 @@ const getAffectionElement = (i) => {
     return `<div class="accordion-item">
 <h2 class="accordion-header" id=heading${i}>
     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-        data-bs-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
+        data-bs-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
         Padecimiento #${i}
     </button>
 </h2>

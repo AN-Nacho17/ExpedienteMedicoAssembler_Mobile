@@ -1,0 +1,42 @@
+.clinicHistory_header img {
+    height: 5rem;
+    margin-left: 20px;
+}
+
+.medicNote_label {
+    margin-top: 20px;
+    background-color: #4483ec;
+    border-radius: 5px;
+    height: 35px;
+}
+
+.medicNote label {
+    vertical-align: middle;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+.medicNote button {
+    border: none;
+    background-color:  inherit;
+}
+
+.medicNote img {
+    padding-left: 10px;
+    padding-bottom: 3px;
+    width: 50px;
+    height: 50px;
+}
+
+.medicNote {
+    background-color: #F0F8FF;
+    margin: 10px;
+    height: 130px;
+    border: none;
+}
+
+.medicNote:hover {
+    transform: scale(1.01);
+}
+
