@@ -5,7 +5,6 @@ $(document).ready(function () {
     //collapse all accordion items
 });
 
-
 const getTreatmentElement = (m) => {
     return `<div class="accordion-item">
 <h2 class="accordion-header" id=treatment-heading${m}>
