@@ -1,5 +1,4 @@
 
-
 $(document).ready(function () {
     //Login form validation
     $("#login_form").validate({
@@ -16,33 +15,54 @@ $(document).ready(function () {
             password: "Por favor ingrese su contraseña",
             email: "Por favor ingrese un email válido"
         },
-        submitHandler: function (form) {
-            localStorage.setItem("name", $("#name").val());
-            localStorage.setItem("password", $("#password").val());
-            localStorage.setItem("email", $("#email").val());
-            form.submit();
+    });
+
+    // $("#login_form").submit(function (e) {
+    //     e.preventDefault();
+    //     var form = $(this);
+    //     var formData = form.serialize();
+    //     var redirectUrl = form.attr('action');
+    //     var url = 'https://localhost:44346/User/Auth/login';
+    //     var type = form.attr('method');
+    //     $.ajax({
+    //         url: url,
+    //         type: type,
+    //         data: formData,
+    //         success: function (data) {
+    //             if (data.success) {
+    //                 window.location.href = redirectUrl;
+    //             } else {
+    //                 alert(data.message);
+    //                 //$("#login_error").html(data.message);
+    //             }
+    //         }
+    //     });
+    // });
+
+    //form submit
+    $("#login_form").submit(function (e) {
+        e.preventDefault();
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let start = $(this).attr('action');
+        if (email != "" && password != "") {
+            $.ajax({
+                type: "POST",
+                url: `https://localhost:44346/User/Auth/login?email=${email}&password=${password}`,
+                success: function (data) {
+                    if (data.success) {
+                        window.location.href = start;
+                    } else {
+                        swal({
+                            title: "Error",
+                            text: data.message,
+                            icon: "error",
+                            button: "Aceptar",
+                        });
+                    }
+                }
+            });
         }
     });
-    /*
-//Login form submit
-$("#login_form").submit(function (e) {
-e.preventDefault();
-var form = $(this);
-const url = "a";
-var data = form.serialize();
-$.ajax({
-    type: "POST",
-    url: url,
-    data: data,
-    success: function (data) {
-        if (data.success) {
-            window.location.href = data.redirect;
-        } else {
-            $("#login_error").html(data.message);
-        }
-    }
-});
-});
-*/
 
 });

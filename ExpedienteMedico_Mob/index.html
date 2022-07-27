@@ -10,6 +10,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href=/css/index.css>
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 
 <body>
@@ -25,23 +26,22 @@
                         <img src="/img/Person.svg" alt="Person">
                         <h4 class="py-1">Inicio de sesion</h4>
                     </div>
-                    <form id="login_form" action="html/Start.html">
-                        <div class="card-body">
-                            <div id="name" class="form-group">
-                                <label class="py-2" for="name">Nombre</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
-                            </div>
-                            <div id="email" class=" form-group">
+                    <form id="login_form" action="/html/Start.html" method="post">
+                        <div class=" card-body">
+                            <div id="email_div" class=" form-group">
                                 <label class="py-2" for="email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                             </div>
-                            <div id="password" class="form-group">
+                            <div id="password_div" class="form-group">
                                 <label class="py-2" for="password">Contraseña</label>
                                 <input type="password" class="form-control" id="password" name="password"
                                     placeholder="Contraseña">
                             </div>
                             <br>
-                            <button id="submit_form" class="btn btn-primary" type="submit">Iniciar</button>
+                            <button id="login" class="btn btn-primary" type="submit">Iniciar</button>
+                            <div id="error_message" class="py-2 card-footer text-danger">
+                                <span id="form_error"></span>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -57,5 +57,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script src="/js/LoadNavbar.js"></script>
 <script src="/js/Login.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </html>
