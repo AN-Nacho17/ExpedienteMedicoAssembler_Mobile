@@ -1,8 +1,40 @@
 $(document).ready(function () {
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user != null) {
+        const id = user.id;
+        const _url = `https://localhost:44346/Api/Api/notes?id=${id}`;
+        $.ajax({
+            type: "GET",
+            url: _url,
+            success: function (data) {
+                if (data.success) {
+                    console.log(data.data);
+                    getNotes(data.data.user);
+                } else {
+                    Swal.fire({
+                        title: "Error",
+                        text: data.data,
+                        icon: "error",
+                        button: "Aceptar",
+                    });
+                }
+            }
+        });
+    } else {
+        Swal.fire({
+            title: "Error",
+            text: "No hay ningun usuario logueado",
+            icon: "error",
+            button: "Aceptar",
+        });
+    }
+});
+
+function getNotes() {
     for (let i = 0; i < 3; i++) {
         $("#medicNotes_list").append(getMedicNote(i));
     }
-});
+}
 
 const getMedicNote = (i) => {
     let item =
