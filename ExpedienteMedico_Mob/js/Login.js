@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 $(document).ready(function () {
 
     $("#login_form").validate({
@@ -50,11 +52,16 @@ $(document).ready(function () {
                 url: `https://localhost:44346/User/Auth/login?email=${email}&password=${password}`,
                 success: function (data) {
                     if (data.success) {
-                        window.location.href = start;
+                        let user = {
+                            email: data.data.email,
+                            name: data.data.completeName,
+                            id: data.data.id,
+                        }
+                        writeFile('auth/user.txt', JSON.stringify(user));
                     } else {
-                        swal({
+                        Swal.fire({
                             title: "Error",
-                            text: data.message,
+                            text: data.data,
                             icon: "error",
                             button: "Aceptar",
                         });
@@ -63,5 +70,13 @@ $(document).ready(function () {
             });
         }
     });
+
+    function writeFile(filename, content) {
+        fs.writeFile(filename, content, err => {
+            if (err) {
+                console.error(err);
+            }
+        })
+    }
 
 });
