@@ -1,6 +1,5 @@
-
 $(document).ready(function () {
-    //Login form validation
+
     $("#login_form").validate({
         rules: {
             name: "required",
