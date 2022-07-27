@@ -1,4 +1,3 @@
-const fs = require('fs');
 
 $(document).ready(function () {
 
@@ -18,28 +17,6 @@ $(document).ready(function () {
         },
     });
 
-    // $("#login_form").submit(function (e) {
-    //     e.preventDefault();
-    //     var form = $(this);
-    //     var formData = form.serialize();
-    //     var redirectUrl = form.attr('action');
-    //     var url = 'https://localhost:44346/User/Auth/login';
-    //     var type = form.attr('method');
-    //     $.ajax({
-    //         url: url,
-    //         type: type,
-    //         data: formData,
-    //         success: function (data) {
-    //             if (data.success) {
-    //                 window.location.href = redirectUrl;
-    //             } else {
-    //                 alert(data.message);
-    //                 //$("#login_error").html(data.message);
-    //             }
-    //         }
-    //     });
-    // });
-
     //form submit
     $("#login_form").submit(function (e) {
         e.preventDefault();
@@ -52,12 +29,8 @@ $(document).ready(function () {
                 url: `https://localhost:44346/User/Auth/login?email=${email}&password=${password}`,
                 success: function (data) {
                     if (data.success) {
-                        let user = {
-                            email: data.data.email,
-                            name: data.data.completeName,
-                            id: data.data.id,
-                        }
-                        writeFile('auth/user.txt', JSON.stringify(user));
+                        localStorage.setItem("user", JSON.stringify(data.data));
+                        window.location.href = start;
                     } else {
                         Swal.fire({
                             title: "Error",
@@ -70,13 +43,5 @@ $(document).ready(function () {
             });
         }
     });
-
-    function writeFile(filename, content) {
-        fs.writeFile(filename, content, err => {
-            if (err) {
-                console.error(err);
-            }
-        })
-    }
 
 });

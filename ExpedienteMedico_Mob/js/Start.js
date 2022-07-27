@@ -1,8 +1,10 @@
 $(document).ready(function () {
-    /*
-    console.log(localStorage.getItem("name").toString());
-    let person_header = document.getElementById("person_header");
-    let newHeader = "Welcome back " + localStorage.getItem("name") + "to" + person_header;
-    person_header.innerHTML = newHeader;
-    */
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user != null) {
+        let person_header = document.getElementById("person_header");
+        let userName = user.email;
+        let newHeader = "Welcome back " + userName;
+        person_header.innerHTML = newHeader;
+    }
+    console.log(user);
 });
