@@ -17,3 +17,15 @@
     font-size: 20px;
     color: #0A2463;
 }
+
+#treatment_header {
+    font: Verdana;
+    font-size: 25px;
+    color: #0A2463;
+}
+
+
+#treatment_header img {
+    width: 30%;
+    height: 30%;
+}

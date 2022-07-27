@@ -29,13 +29,13 @@ $(document).ready(function () {
             button: "Aceptar",
         });
     }
-    for (let i = 0; i < 3; i++) {
-        $("#medicines_list").append(getMedicineElement(i));
-    }
 });
 
-const getMedicines = (medicines) => {
-
+const getMedicines = (data) => {
+    const medicineList = data.medicines;
+    for (let i = 0; i < medicineList.length; i++) {
+        $("#medicines_list").append(getMedicineElement(i));
+    }
 }
 
 const getMedicineElement = (i) => {
