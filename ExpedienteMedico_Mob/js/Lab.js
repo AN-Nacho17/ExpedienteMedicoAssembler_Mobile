@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     const pdfBtns = [];
     const imgBtns = [];
@@ -49,7 +48,7 @@ $(document).ready(function () {
                 Ver PDF
                 <img src="/img/pdf.svg" alt="">
             </button>`;
-            let id = `#pdfbtn${i}`;
+            let id = `pdfbtn${i}`;
             let obj = { id: id, url: _pdfUrl };
             pdfBtns.push(obj);
         } else {
@@ -63,7 +62,7 @@ $(document).ready(function () {
                     <img src="/img/img.svg" alt="">
                 </button>
             </div>`;
-            let id = `#imgbtn${i}`;
+            let id = `imgbtn${i}`;
             let obj = { id: id, url: _imageUrl };
             imgBtns.push(obj);
         } else {
@@ -101,8 +100,12 @@ $(document).ready(function () {
     </div >
     </div > `;
     }
+    console.log(pdfBtns);
+    console.log(imgBtns);
+    //setListeners();
+});
 
-    //iterate through all pdf buttons and add event listener
+function setListeners() {
     for (let i = 0; i < pdfBtns.length; i++) {
         document.getElementById(pdfBtns[i].id).addEventListener('click', function () {
             window.open(pdfBtns[i].url, '_blank');
@@ -115,6 +118,4 @@ $(document).ready(function () {
             window.open(imgBtns[i].url, '_blank');
         });
     }
-
-
-});
+}
