@@ -19,7 +19,7 @@
 
 .medicNote button {
     border: none;
-    background-color:  inherit;
+    background-color: inherit;
 }
 
 .medicNote img {
@@ -40,3 +40,8 @@
     transform: scale(1.01);
 }
 
+
+#note_description p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
