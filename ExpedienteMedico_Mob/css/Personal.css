@@ -3,7 +3,7 @@
 }
 
 #personal_info_container input {
-    width: 270px;
+    width: 280px;
     background-color: #3E92CC;
     color: white;
     border: 2.5px solid #3E92CC;
@@ -12,20 +12,14 @@
 }
 
 #personal_info_container label {
+    margin: 5px;
+    width: 200px;
     padding-bottom: 2px;
     font: Verdana;
     font-size: 20px;
-    color: #0A2463;
 }
-
-#treatment_header {
-    font: Verdana;
-    font-size: 25px;
-    color: #0A2463;
-}
-
 
 #treatment_header img {
-    width: 30%;
-    height: 30%;
+    width: 100px;
+    height: 100px;
 }
