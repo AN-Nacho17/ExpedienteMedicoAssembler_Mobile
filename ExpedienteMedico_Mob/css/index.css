@@ -1,34 +1,96 @@
-
 .card-title {
-    background-color: #B0C4DE;
+    background-color: #3E92CC;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     text-align: center;
     font-weight: normal;
 }
 
+#login_card_container {
+    background-color: #DBE4EE;
+    border-radius: 5px;
+    border: 5px solid #3E92CC;
+}
+
+.card-title img {
+    height: 70px;
+    width: 70px;
+}
+
 .card-body {
-    background-color: #E1EBEE;
+    background-color: #DBE4EE;
     text-align: left;
 }
 
-#submit_form {
+#login {
+    background-color: #3E92CC;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     font-weight: normal;
     align-self: center;
 }
 
-#submit_form:hover {
-    transform: scale(1.1);
-    background-color: #48D1CC;
-    color: white;
+body {
+    background-color: #DBE4EE;
 }
 
+#login:hover {
+    transform: scale(1.1);
+    background-color: #D8315B;
+    color: white;
+}
 
 form .error {
     font-size: small;
     padding-top: 5px;
     color: #E52B50;
+}
+
+#start_header {
+    background-color: #DBE4EE;
+    font-weight: normal;
+    color: #2A2D34;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+}
+
+#start_header div img {
+    padding-left: 5px;
+    width: 70px;
+    height: 70px;
+    background-color: #DBE4EE;
+}
+
+#image_slider {
+    background-color: #DBE4EE;
+}
+
+#image_slider img {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 150px;
+}
+
+#image_slider h5 {
+    color: #2A2D34;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20spx;
+}
+
+#image_slider p {
+    color: #2A2D34;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+.carousel .carousel-control-prev-icon {
+    background-image: url('../img/sliderleft.svg');
+    background-color: #DBE4EE;
+}
+
+.carousel .carousel-control-next-icon {
+    background-image: url('../img/slideright.svg');
+    background-color: #DBE4EE;
 }
