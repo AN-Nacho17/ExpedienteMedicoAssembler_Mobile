@@ -25,3 +25,8 @@
 .accordion-button:focus {
     box-shadow: inherit;
 }
+
+#accordion-description p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}

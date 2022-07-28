@@ -1,13 +1,5 @@
 $(document).ready(function () {
 
-    tinymce.init({
-        selector: "textarea",
-        height: 300,
-        menubar: false,
-        toolbar: false,
-        readonly: true
-    });
-
     let user = JSON.parse(localStorage.getItem("user"));
     if (user != null) {
         const id = user.id;
@@ -23,7 +15,7 @@ $(document).ready(function () {
                     Swal.fire({
                         title: "Error",
                         text: data.data,
-                        icon: "error",
+                        iscon: "error",
                         button: "Aceptar",
                     });
                 }
@@ -59,11 +51,11 @@ $(document).ready(function () {
         </div>
         <div class="container py-2">
             <div class="row">
-                <textarea id="tiny" class="py-2">
-                ${data.description}
-                </textarea >
+                <div id="accordion-description">
+                    ${data.description}
+                </div>
             </div >
-         </div >
+        </div >
     </div >
     </div > `;
     }
