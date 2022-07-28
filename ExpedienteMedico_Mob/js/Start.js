@@ -3,7 +3,7 @@ $(document).ready(function () {
     if (user != null) {
         let person_header = document.getElementById("person_header");
         let userName = user.email;
-        let newHeader = "Welcome back " + userName;
+        let newHeader = "Bienvenido de vuelta " + userName;
         person_header.innerHTML = newHeader;
     }
     console.log(user);

@@ -4,7 +4,7 @@
 
 .accordion-button:is(.collapsed) {
     color: inherit;
-    background-color:#4483ec;
+    background-color: #3E92CC;
     color: white;
 }
 
@@ -14,7 +14,7 @@
 
 .accordion-button:not(.collapsed) {
     color: inherit;
-    background-color:#004170;
+    background-color: #D8315B;
     color: white;
 }
 
@@ -25,4 +25,3 @@
 .accordion-button:focus {
     box-shadow: inherit;
 }
-

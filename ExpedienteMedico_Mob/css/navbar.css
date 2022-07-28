@@ -3,3 +3,36 @@
     font-size: 30px;
     background-color: #3E92CC;
 }
+
+#navbar a img {
+    height: 70px;
+    width: 70px;
+    margin-right: 10px;
+}
+
+#navbar a {
+    color: white;
+    font: Verdana;
+    font-size: 30px;
+}
+
+#navbar li a {
+    color: white;
+    font: Verdana;
+    font-size: 25px;
+}
+
+
+#navbar li a img {
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+}
+
+
+#toggler img {
+    height: 60px;
+    width: 60px;
+    margin-right: 5px;
+
+}

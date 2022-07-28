@@ -10,7 +10,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.success) {
                     console.log(data.data);
-                    getMedicines(data)
+                    getMedicines(data.data)
                 } else {
                     Swal.fire({
                         title: "Error",
@@ -29,23 +29,25 @@ $(document).ready(function () {
             button: "Aceptar",
         });
     }
+
+    const getMedicines = (data) => {
+        for (let i = 0; i < data.length; i++) {
+            $("#medicines_list").append(getMedicineElement(data[i], i));
+        }
+    }
+
+    const getMedicineElement = (data, i) => {
+        let item =
+            `<div class="row">
+                <li class="list-group-item">
+                ${data.name}
+                     <div class="container">
+                         <img src="/img/_medicine.svg" alt="Medicine">
+                     </div>
+                 </li>
+            </div>`;
+        return item;
+    }
+
 });
 
-const getMedicines = (data) => {
-    const medicineList = data.medicines;
-    for (let i = 0; i < medicineList.length; i++) {
-        $("#medicines_list").append(getMedicineElement(i));
-    }
-}
-
-const getMedicineElement = (i) => {
-    let item =
-        `<div class="row">
-            <li class="list-group-item">Medicine #${i}
-                 <div class="container">
-                     <img src="/img/_medicine.svg" alt="Medicine">
-                 </div>
-             </li>
-        </div>`;
-    return item;
-}

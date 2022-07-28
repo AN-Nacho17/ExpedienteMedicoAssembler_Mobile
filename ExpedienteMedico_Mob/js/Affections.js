@@ -1,31 +1,71 @@
 $(document).ready(function () {
-    for (let i = 0; i < 3; i++) {
-        $("#affections_container").append(getAffectionElement(i));
+
+    tinymce.init({
+        selector: "textarea",
+        height: 300,
+        menubar: false,
+        toolbar: false,
+        readonly: true
+    });
+
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user != null) {
+        const id = user.id;
+        const _url = `https://localhost:44346/Api/Api/sufferings?id=${id}`;
+        $.ajax({
+            type: "GET",
+            url: _url,
+            success: function (data) {
+                if (data.success) {
+                    console.log(data.data);
+                    getAffections(data.data);
+                } else {
+                    Swal.fire({
+                        title: "Error",
+                        text: data.data,
+                        icon: "error",
+                        button: "Aceptar",
+                    });
+                }
+            }
+        });
+    } else {
+        Swal.fire({
+            title: "Error",
+            text: "No hay ningun usuario logueado",
+            icon: "error",
+            button: "Aceptar",
+        });
+    }
+
+    function getAffections(data) {
+        for (let i = 0; i < data.length; i++) {
+            $("#affections_container").append(getAffectionElement(data[i], i));
+        }
+    }
+
+    const getAffectionElement = (data, i) => {
+        return `<div class="accordion-item">
+    <h2 class="accordion-header" id=affection-heading${i}>
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+            data-bs-target="#affection-collapse${i}" aria-expanded="false" aria-controls="affection-collapse${i}">
+            ${data.name}
+        </button>
+    </h2>
+    <div id="affection-collapse${i}" class="accordion-collapse collapse show" aria-labelledby="affection-heading${i}"
+        data-bs-parent="#affections_container">
+        <div class="accordion-body">
+            <strong>Detalles del padecimiento.</strong>
+        </div>
+        <div class="container py-2">
+            <div class="row">
+                <textarea id="tiny" class="py-2">
+                ${data.description}
+                </textarea >
+            </div >
+         </div >
+    </div >
+    </div > `;
     }
 });
 
-
-const getAffectionElement = (i) => {
-    return `<div class="accordion-item">
-<h2 class="accordion-header" id=heading${i}>
-    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-        data-bs-target="#collapse${i}" aria-expanded="false" aria-controls="collapse${i}">
-        Padecimiento #${i}
-    </button>
-</h2>
-<div id="collapse${i}" class="accordion-collapse collapse show" aria-labelledby="heading${i}"
-    data-bs-parent="#affections_container">
-    <div class="accordion-body">
-        <strong>Detalles del padecimiento.</strong>
-    </div>
-    ${affectionDescription}
-</div>
-</div>`;
-}
-
-const affectionDescription =
-    `<div class="container py-2">
-        <div class="row">
-            <textarea class="py-2"></textarea>
-        </div>
-    </div >`;

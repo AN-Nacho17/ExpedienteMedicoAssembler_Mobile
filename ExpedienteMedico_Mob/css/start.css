@@ -19,13 +19,15 @@
 }
 
 #cards_container {
-    background-image: linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%);
+    background-color: #3E92CC;
+    /* background-image: linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%); */
 }
 
 .card {
+    background-color: #DBE4EE;
     margin-top: 2rem;
-    margin: 7px;
-    border: #32CCBC solid 7px;
+    margin: 5px;
+    border: #81A4CD solid 5px;
 }
 
 .card-title {
@@ -36,9 +38,14 @@
 }
 
 .card-img {
+    background-color: #DBE4EE;
     width: 7rem;
     height: 7rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+body {
+    background-color: #F0F8FF;
 }
