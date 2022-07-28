@@ -6,6 +6,10 @@
     font-weight: normal;
 }
 
+#login_container {
+    background-color: white;
+}
+
 #login_card_container {
     background-color: #DBE4EE;
     border-radius: 5px;

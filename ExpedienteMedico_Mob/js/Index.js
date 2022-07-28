@@ -23,10 +23,11 @@ $(document).ready(function () {
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
         let start = $(this).attr('action');
+        const _server = 'asmymedicaladmin.azurewebsites.net';
         if (email != "" && password != "") {
             $.ajax({
                 type: "POST",
-                url: `https://localhost:44346/User/Auth/login?email=${email}&password=${password}`,
+                url: `https://${_server}/User/Auth/login?email=${email}&password=${password}`,
                 success: function (data) {
                     if (data.success) {
                         localStorage.setItem("user", JSON.stringify(data.data));

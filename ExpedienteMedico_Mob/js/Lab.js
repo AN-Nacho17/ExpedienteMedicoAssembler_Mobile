@@ -4,7 +4,8 @@ $(document).ready(function () {
     let user = JSON.parse(localStorage.getItem("user"));
     if (user != null) {
         const id = user.id;
-        const _url = `https://localhost:44346/Api/Api/lab?id=${id}`;
+        const _server = 'asmymedicaladmin.azurewebsites.net';
+        const _url = `https://${_server}/Api/Api/lab?id=${id}`;
         $.ajax({
             type: "GET",
             url: _url,
